@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.CQRS.Commands.CategoryCommands
 {
-	internal class CreateCategoryCommand
+	public class CreateCategoryCommand
 	{
+		public string Name {  get; set; }
 	}
 }

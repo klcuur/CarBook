@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Features.CQRS.Commands.CategoryCommands
+namespace CarBook.Application.Features.CQRS.Queries.ContactQueries
 {
-	public class RemoveCategoryCommand
+	public class GetContactByIdQuery
 	{
 		public int Id { get; set; }
-        public RemoveCategoryCommand(int id)
+        public GetContactByIdQuery(int id)
         {
             Id = id;
         }
