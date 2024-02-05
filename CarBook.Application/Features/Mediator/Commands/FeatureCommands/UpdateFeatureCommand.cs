@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Commands
 {
-	public class CreateFeatureCommand:IRequest
+	public class UpdateFeatureCommand:IRequest
 	{
 		public int FeatureID {  get; set; }
 		public string Name {  get; set; }
