@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Features.CQRS.Commands.AboutCommands;
 using CarBook.Application.Features.Mediator.Commands;
+using CarBook.Application.Features.Mediator.Commands.FeatureCommands;
 using CarBook.Application.Interfaces;
 using CarBook.Domain.Entities;
 using MediatR;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandlers
 {
-	public class CreateFeatureCommandHandler:IRequest<CreateAboutCommand>
+	public class CreateFeatureCommandHandler:IRequestHandler<CreateFeatureCommand>
 	{
 		private readonly IRepository<Feature> _repository;
         public CreateFeatureCommandHandler(IRepository<Feature> repository)
