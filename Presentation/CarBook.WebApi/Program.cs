@@ -6,6 +6,7 @@ using CarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
 using CarBook.Application.Interfaces;
 using CarBook.Application.Interfaces.CarInterfaces;
+using CarBook.Application.Services;
 using CarBook.Persistance.Context;
 using CarBook.Persistance.Repositories;
 using CarBook.Persistance.Repositories.CarRepositories;
@@ -51,6 +52,8 @@ builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+builder.Services.AddApplicationService(builder.Configuration);//MediatR icin eklemeye gerek kalmadi
 
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
