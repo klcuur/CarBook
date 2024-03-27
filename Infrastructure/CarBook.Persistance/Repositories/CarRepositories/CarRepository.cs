@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace CarBook.Persistance.Repositories.CarRepositories
 {
@@ -24,10 +25,12 @@ namespace CarBook.Persistance.Repositories.CarRepositories
 			return values;
 		}
 
-		async Task<List<Car>> ICarRepository.GetCarsListWithBrands()
-		{
-			var values =await _context.Cars.Include(x => x.Brand).ToListAsync();
+        public List<Car> GetLast5CarsWithBrands()
+        {
+			var values=_context.Cars.Include(x=> x.Brand).OrderByDescending(x=>x.CarID).Take(5).ToList();
 			return values;
-		}
+        }
+
+      
 	}
 }
